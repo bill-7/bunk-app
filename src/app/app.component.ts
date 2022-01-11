@@ -1,7 +1,5 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -12,18 +10,25 @@ export class AppComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  launches$!: Launch[]
+  launches!: Launch[]
 
   ngOnInit() {
-    this.getData().subscribe(data => {
-      console.log(data)
-      this.launches$ = data
-    })
+    this.getLaunchData().subscribe(data => this.launches = data)
   }
 
-  private getData() {
-    const url = 'http://localhost:8081/launches'
+  private getLaunchData() {
+    const url = `http://localhost:8081/launches`
     return this.http.get<Launch[]>(url)
+  }
+
+  getRocketData(rocketId: string) {
+    const url = `http://localhost:8081/rocket/${rocketId}`
+    return this.http.get<Rocket>(url)
+  }
+
+  getCrewData(crewId: string) {
+    const url = `http://localhost:8081/crew/${crewId}`
+    return this.http.get<Crew>(url)
   }
 }
 
@@ -31,4 +36,15 @@ interface Launch {
   id: string
   name: string
   date_utc: string
+  flight_number: number
+  rocket: string
+}
+
+interface Rocket {
+  flickr_images: string[]
+  name: string
+}
+
+interface Crew {
+
 }
