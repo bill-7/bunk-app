@@ -1,0 +1,22 @@
+<div class="row">
+  <img class="col-6" src={{rocket.flickr_images[0]}}>
+  <div class="col-6">
+    <div class="row pb-2">
+      <span class="col-4">Launch ID</span>
+      <span class="col-8 font-monospace">{{launch.id}}</span>
+    </div>
+    <div class="row pb-2">
+      <span class="col-4">Rocket Name</span>
+      <span class="col-8">{{rocket.name}}</span>
+    </div>
+
+    <div class="row pb-2">
+      <span class="col-4">Rocket ID</span>
+      <span class="col-8 font-monospace">{{launch.rocket}}</span>
+    </div>
+    <div class="row pb-2">
+      <span class="col-4">Crew</span>
+      <span class="col-8">{{crew ? crew : "Unmanned"}}</span>
+    </div>
+  </div>
+</div>

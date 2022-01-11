@@ -2,10 +2,10 @@
   <h1 class="py-5">SpaceX Upcoming Launches</h1>
   <div class="row px-3 py-2">
     <span class="col">Flight Number</span>
-    <span class="col">Rocket Name</span>
+    <span class="col">Mission Name</span>
     <span class="col">Launch Countdown</span>
   </div>
-  <accordion [isAnimated]="true" [closeOthers]="true">
+  <accordion [isAnimated]="true">
     <div *ngFor="let launch of launches">
       <accordion-group class="pb-1">
         <div accordion-heading class="row">
@@ -13,18 +13,7 @@
           <span class="col">{{launch.name}}</span>
           <span class="col">{{launch.date_utc | date}}</span>
         </div>
-        <div class="row pb-2  justify-content-center">
-          <span class="col-2">ID:</span>
-          <span class="col-4 font-monospace">{{launch.id}}</span>
-          <span class="col-2">Rocket:</span>
-          <span class="col-4 font-monospace">{{launch.rocket}}</span>
-        </div>
-        <div class="row">
-          <span class="col-2">Payloads:</span>
-          <span class="col-4 font-monospace">{{launch.id}}</span>
-          <span class="col-2">Rocket:</span>
-          <span class="col-4 font-monospace">{{launch.rocket}}</span>
-        </div>
+        <app-details [launch]=launch></app-details>
       </accordion-group>
     </div>
   </accordion>

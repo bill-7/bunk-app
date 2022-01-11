@@ -15,6 +15,7 @@ const rocketURL = `https://api.spacexdata.com/v4/rockets/`
 const crewURL = `https://api.spacexdata.com/v4/crew/`
 
 app.get(`/launches`, (_: null, res: { json: (payload: JSON[]) => void }) => {
+  console.log("launch")
   axios(launchURL).then((sl: SpacexLaunches) => {
     res.json(sl.data)
   })
@@ -22,6 +23,7 @@ app.get(`/launches`, (_: null, res: { json: (payload: JSON[]) => void }) => {
 
 app.get(`/rocket/:rocketId`, (req: Request, res: { json: (payload: JSON) => void }) => {
   const rId = req.params.rocketId
+  console.log("rocket", rId)
   axios(rocketURL + rId).then((sd: SpacexData) => {
     res.json(sd.data)
   })
@@ -29,6 +31,7 @@ app.get(`/rocket/:rocketId`, (req: Request, res: { json: (payload: JSON) => void
 
 app.get(`/crew/:crewId`, (req: Request, res: { json: (payload: JSON) => void }) => {
   const cId = req.params.crewId
+  console.log("crew", cId)
   axios(rocketURL + cId).then((sd: SpacexData) => {
     res.json(sd.data)
   })
