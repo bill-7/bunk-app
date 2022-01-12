@@ -23,6 +23,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ### What would you add to your solution if you had more time? 
 
 - Fix bug with countdown timer/swap out for npm lib
+- Research monorepo best practices and implement a single command start
 - Investigate previous launches to finish implementing crew data (all upcoming launches are unmanned)
 - Improve details component impl by swapping out the hardcoded list of details with some `*ngFor` iteration over the data objects
 - Add more tests
