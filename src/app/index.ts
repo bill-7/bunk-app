@@ -10,6 +10,14 @@ export interface Launch {
 export interface Rocket {
   flickr_images: string[]
   name: string
+  country: string
+  stages: number
+  height: {
+    meters: number
+  }
+  mass: {
+    kg: number
+  }
 }
 
 export interface Crew {

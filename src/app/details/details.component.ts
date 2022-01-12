@@ -18,7 +18,6 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRocketData(this.launch.rocket).subscribe(r => this.rocket = r)
-
     if (this.launch.crew.length > 0)
       this.getCrewData(this.launch.crew[0]).subscribe(c => this.crew = c)
   }

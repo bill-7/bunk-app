@@ -7,8 +7,6 @@ const port = 8081
 const corsOptions = { origin: "http://localhost:4200" }
 
 app.use(cors(corsOptions))
-// app.use(express.json())
-// app.use(express.urlencoded({ extended: true }))
 
 const launchURL = `https://api.spacexdata.com/v4/launches/upcoming`
 const rocketURL = `https://api.spacexdata.com/v4/rockets/`

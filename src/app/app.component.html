@@ -1,6 +1,6 @@
 <div class="container col-6">
-  <h1 class="py-5">SpaceX Upcoming Launches</h1>
-  <div class="row px-3 py-2">
+  <h1 class="py-5 fs-2">SpaceX Upcoming Launches</h1>
+  <div class="row px-3 py-2 fs-5">
     <span class="col">Flight Number</span>
     <span class="col">Mission Name</span>
     <span class="col">Launch Countdown</span>
@@ -8,10 +8,10 @@
   <accordion [isAnimated]="true">
     <div *ngFor="let launch of launches">
       <accordion-group class="pb-1">
-        <div accordion-heading class="row">
+        <div accordion-heading class="row fs-5">
           <span class="col">{{launch.flight_number}}</span>
           <span class="col">{{launch.name}}</span>
-          <span class="col">{{launch.date_utc | date}}</span>
+          <app-countdown class="col" [time]="launch.date_utc"></app-countdown>
         </div>
         <app-details [launch]=launch></app-details>
       </accordion-group>

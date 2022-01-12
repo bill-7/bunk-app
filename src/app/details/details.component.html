@@ -1,4 +1,4 @@
-<div class="row">
+<div *ngIf="rocket" class="row">
   <img class="col-6" src={{rocket.flickr_images[0]}}>
   <div class="col-6">
     <div class="row pb-2">
@@ -6,10 +6,13 @@
       <span class="col-8 font-monospace">{{launch.id}}</span>
     </div>
     <div class="row pb-2">
+      <span class="col-4">Launch Day</span>
+      <span class="col-8">{{launch.date_utc | date}}</span>
+    </div>
+    <div class="row pb-2">
       <span class="col-4">Rocket Name</span>
       <span class="col-8">{{rocket.name}}</span>
     </div>
-
     <div class="row pb-2">
       <span class="col-4">Rocket ID</span>
       <span class="col-8 font-monospace">{{launch.rocket}}</span>
@@ -17,6 +20,22 @@
     <div class="row pb-2">
       <span class="col-4">Crew</span>
       <span class="col-8">{{crew ? crew : "Unmanned"}}</span>
+    </div>
+    <div class="row pb-2">
+      <span class="col-4">Country</span>
+      <span class="col-8">{{rocket.country}}</span>
+    </div>
+    <div class="row pb-2">
+      <span class="col-4">Stages</span>
+      <span class="col-8">{{rocket.stages}}</span>
+    </div>
+    <div class="row pb-2">
+      <span class="col-4">Height</span>
+      <span class="col-8">{{rocket.height.meters + 'm'}}</span>
+    </div>
+    <div class="row pb-2">
+      <span class="col-4">Mass</span>
+      <span class="col-8">{{rocket.mass.kg + 'kg'}}</span>
     </div>
   </div>
 </div>

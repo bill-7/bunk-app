@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { DetailsComponent } from './details/details.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailsComponent
+    DetailsComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,
