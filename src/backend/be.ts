@@ -30,7 +30,7 @@ app.get(`/rocket/:rocketId`, (req: Request, res: { json: (payload: JSON) => void
 app.get(`/crew/:crewId`, (req: Request, res: { json: (payload: JSON) => void }) => {
   const cId = req.params.crewId
   console.log("crew", cId)
-  axios(rocketURL + cId).then((sd: SpacexData) => {
+  axios(crewURL + cId).then((sd: SpacexData) => {
     res.json(sd.data)
   })
 })
